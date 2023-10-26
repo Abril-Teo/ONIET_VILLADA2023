@@ -1,0 +1,33 @@
+{% extends base.html}
+
+{% block content %}
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet"> 
+
+    <div class="ptable">
+      <h1 class="headin">Standings</h1>
+              <table class="table table-primary">
+                <tr class="col">
+                  <th>#</th>
+                  <th>Empresa</th>
+                  <th>Produccion Total</th>
+                  <th>Cant. Piezas OK</th>
+                  <th>Cant. Piezas Error</th>
+                  <th>% Piezas OK</th>
+                  <th>% Piezas Error</th>
+                  
+                </tr>
+                {% for equipo in equipos%}
+                <tr class="wpos">
+                    <td>1</td>
+                    <td>{{ empresa.nombre }}</td>
+                    <td>{{empresa.produc_total}}</td>
+                    <td>{{empresa.piezas_OK}}</td>
+                    <td>{{empresa.piezas_error}}</td>
+                    <td>{{empresa.porcentajes_OK}}</td>
+                    <td>{{empresa.porcentahe_error}}</td>
+                  </tr>
+                {% endfor %}
+
+              </table>
+    </div>
+    {% endblock content %}

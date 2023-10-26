@@ -16,8 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from confApp.views import(
+    visual,
+    mostrar_datos_json
+)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    
+    path('', visual, name='base.html'),
+    path('mostrar_datos_json/', mostrar_datos_json, name='mostrar_datos_json'),
 ]
